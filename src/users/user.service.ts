@@ -47,7 +47,6 @@ export class UserService {
   }
 
   async searchUsers(query: string) {
-    // Perform a case-insensitive search for users whose username matches the query
     return this.userModel.find({ username: { $regex: new RegExp(query, 'i') } }).exec();
   }
   

@@ -5,11 +5,12 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { PostController } from './post.controller';
 import { PostService } from './post.service';
 import { Post, PostSchema } from './post.entity';
+import { FollowModule } from '../follow/follow.module'
 
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: Post.name, schema: PostSchema }]),
-    // Import any additional modules required for posts (e.g., authentication modules)
+    FollowModule, 
   ],
   controllers: [PostController],
   providers: [PostService],

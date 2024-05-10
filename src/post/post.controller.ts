@@ -18,9 +18,13 @@ export class PostController {
   findAll() {
     return this.postService.findAll();
   }
-
   @Get(':userId')
   findOneByUserId(@Param('userId') userId: string): Promise<PostEntity | null> {
     return this.postService.findOneByUserId(userId);
+  }
+
+  @Get('followed/:userId')
+  findFollowedPosts(@Param('userId') userId: string): Promise<PostEntity[]> {
+    return this.postService.findFollowedPosts(userId);
   }
 }
