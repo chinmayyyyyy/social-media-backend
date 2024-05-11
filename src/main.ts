@@ -2,6 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as express from 'express';
 import * as cors from 'cors';
+import { config } from 'dotenv';
+config();
 
 async function bootstrap() {
   const server = express();
